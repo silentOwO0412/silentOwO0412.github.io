@@ -42,38 +42,40 @@ const closeBtn = document.querySelector('.close-btn');
 const modalTitle = document.getElementById('modalTitle');
 const modalDev = document.getElementById('modalDev');
 const modalDesc = document.getElementById('modalDesc');
+const modalVideo = document.getElementById('modalVideo'); // 新增抓取影片元素
 
-// 抓取畫面上所有的 "Get Info" 按鈕
 const infoButtons = document.querySelectorAll('.info-btn');
 
-// 幫每一個按鈕加上點擊事件
 infoButtons.forEach(button => {
   button.addEventListener('click', function(event) {
-    event.preventDefault(); // 防止 <a> 標籤預設的跳轉行為
+    event.preventDefault(); 
     
-    // 從按鈕的 data-* 屬性拿出遊戲資訊
+    // 拿出所有的資料，包含影片網址
     const title = this.getAttribute('data-title');
     const dev = this.getAttribute('data-dev');
     const desc = this.getAttribute('data-desc');
+    const video = this.getAttribute('data-video');
 
-    // 把資訊填入彈出視窗中
+    // 填入資料
     modalTitle.textContent = title;
     modalDev.textContent = dev;
     modalDesc.textContent = desc;
+    modalVideo.src = video; // 把影片網址塞進 iframe 裡
 
-    // 顯示彈出視窗
     modal.style.display = 'block';
   });
 });
 
-// 當點擊視窗右上角的 X 時，關閉視窗
-closeBtn.addEventListener('click', function() {
+// 建立一個關閉視窗的函數（超重要：關閉時清空影片網址，讓聲音停止）
+function closeModal() {
   modal.style.display = 'none';
-});
+  modalVideo.src = ""; // 清空 src，停止影片播放
+}
 
-// 當點擊彈出視窗以外的灰色背景區域時，也關閉視窗
+closeBtn.addEventListener('click', closeModal);
+
 window.addEventListener('click', function(event) {
   if (event.target === modal) {
-    modal.style.display = 'none';
+    closeModal();
   }
 });
