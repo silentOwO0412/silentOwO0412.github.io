@@ -1,169 +1,191 @@
+/* ===============================
+   🎮 GAMELIFE - GAME STYLE THEME
+=================================*/
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif; /* Added a clean font */
-  background-color: #f4f4f9; /* Added a soft background color */
+  font-family: 'Orbitron', Arial, sans-serif;
+  background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+  color: #ffffff;
 }
 
-/* --- DARK MODE STYLES --- */
+/* ===== Navigation Bar ===== */
+nav {
+  background: #0d0d18;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+nav a {
+  color: #00f2ff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00f2ff;
+}
+
+/* ===== Dark Mode (Even Darker Cyber Mode) ===== */
 body.dark-mode {
-  background-color: #121212;
+  background: #000000;
   color: #ffffff;
 }
 
 body.dark-mode nav {
-  background-color: #000000;
+  background-color: #050505;
 }
 
-body.dark-mode .game-card {
-  background-color: #1e1e1e;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05); /* Softer shadow for dark mode */
-}
-
-body.dark-mode .game-title {
-  color: #ffffff;
-}
-
-body.dark-mode .developer-name {
-  color: #bbbbbb; /* Lighter grey so it's readable on dark backgrounds */
-}
-
-/* Optional: Style the toggle button itself */
-#darkModeToggle {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  margin-left: 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#darkModeToggle:hover {
-  background-color: #666;
-}
-
-/* Navigation Bar */
-nav {
-  background-color: #333;
-  padding: 15px;
-  text-align: center;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-nav a:hover, nav a.active {
-  color: #007bff;
-}
-
-/* Game Type Container */
+/* ===== Game Cards ===== */
 .game-container {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 20px; 
-  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
 }
 
 .game-card {
-  width: 250px; 
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden; 
-  margin: 15px; 
-  transition: transform 0.3s ease; 
+  width: 260px;
+  background: #141428;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
 }
 
 .game-card:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px #00f2ff;
 }
 
+/* ===== Game Image ===== */
 .game-pic img {
   width: 100%;
-  height: 150px; /* Fixed height so all cards line up perfectly */
-  object-fit: cover; /* Prevents image distortion */
+  height: 160px;
+  object-fit: cover;
   display: block;
 }
 
+/* ===== Game Info ===== */
 .game-info {
-  padding: 15px;
+  padding: 20px;
   text-align: center;
 }
 
 .game-title {
-  font-size: 1.2em;
-  margin: 0 0 5px 0;
-  color: #333;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  color: #00f2ff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
 }
 
-/* Changed from artist-name to developer-name */
 .developer-name {
   font-size: 0.9em;
-  color: #777;
-  margin: 0 0 15px 0;
+  color: #aaaaaa;
+  margin-bottom: 15px;
 }
 
+/* ===== Game Button ===== */
 .game-btn {
   display: inline-block;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
+  padding: 10px 18px;
+  background: linear-gradient(45deg, #00f2ff, #007bff);
+  color: #000;
   text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.9em;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .game-btn:hover {
-  background-color: #0056b3;
+  background: linear-gradient(45deg, #00c3cc, #0056b3);
+  box-shadow: 0 0 15px #00f2ff;
+  transform: scale(1.05);
 }
 
-/* --- 彈出視窗 (Modal) 樣式 --- */
+/* ===== Dark Mode Toggle Button ===== */
+#darkModeToggle {
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#darkModeToggle:hover {
+  box-shadow: 0 0 10px #ff00cc;
+}
+
+/* ===== Modal (Cyber Popup) ===== */
 .modal {
-  display: none; /* 預設隱藏 */
+  display: none;
   position: fixed;
-  z-index: 1000; /* 確保它在畫面最上層 */
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
 }
 
 .modal-content {
-  background-color: #f4f4f9;
-  margin: 15% auto; /* 距離頂部 15%，並且置中 */
+  background: #141428;
+  margin: 12% auto;
   padding: 30px;
-  border-radius: 8px;
-  width: 80%;
-  max-width: 500px; /* 視窗最大寬度 */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 85%;
+  max-width: 500px;
+  border: 1px solid #00f2ff;
+  box-shadow: 0 0 25px #00f2ff;
   position: relative;
+  animation: popup 0.4s ease;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .close-btn {
-  color: #888;
+  color: #00f2ff;
   position: absolute;
   top: 15px;
   right: 20px;
   font-size: 28px;
-  font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .close-btn:hover {
-  color: #333;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00f2ff;
 }
 
-/* 支援深色模式的彈出視窗 */
-body.dark-mode .modal-content {
-  background-color: #1e1e1e;
-  color: #fff;
-}
-body.dark-mode .close-btn:hover {
-  color: #fff;
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .game-container {
+    padding: 20px;
+  }
+
+  .game-card {
+    width: 90%;
+  }
 }
