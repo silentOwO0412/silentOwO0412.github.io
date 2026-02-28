@@ -21,6 +21,19 @@ toggleBtn.addEventListener('click', function() {
   }
 });
 
+// 卡片進場動畫
+const cards = document.querySelectorAll('.game-card');
+cards.forEach((card, index) => {
+  card.style.opacity = "0";
+  card.style.transform = "translateY(30px)";
+  
+  setTimeout(() => {
+    card.style.transition = "0.6s ease";
+    card.style.opacity = "1";
+    card.style.transform = "translateY(0)";
+  }, index * 200);
+});
+
 // --- 彈出視窗功能 ---
 
 // 抓取彈出視窗的相關元素
