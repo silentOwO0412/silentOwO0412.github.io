@@ -205,3 +205,64 @@ body.dark-mode nav {
     width: 90%;
   }
 }
+
+/* ===== Game Tags ===== */
+.game-tags {
+  margin-bottom: 15px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 3px;
+  font-size: 0.75em;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+/* 類型顏色 */
+
+.sandbox {
+  background: rgba(0, 255, 150, 0.2);
+  color: #00ffaa;
+  border: 1px solid #00ffaa;
+}
+
+.moba {
+  background: rgba(255, 0, 150, 0.2);
+  color: #ff00cc;
+  border: 1px solid #ff00cc;
+}
+
+.horror {
+  background: rgba(255, 50, 50, 0.2);
+  color: #ff4444;
+  border: 1px solid #ff4444;
+}
+
+.multiplayer {
+  background: rgba(0, 150, 255, 0.2);
+  color: #00aaff;
+  border: 1px solid #00aaff;
+}
+
+.coop {
+  background: rgba(255, 200, 0, 0.2);
+  color: #ffcc00;
+  border: 1px solid #ffcc00;
+}
+
+.survival {
+  background: rgba(150, 255, 0, 0.2);
+  color: #aaff00;
+  border: 1px solid #aaff00;
+}
+
+/* Hover 發光效果 */
+.tag:hover {
+  box-shadow: 0 0 10px currentColor;
+  transform: scale(1.1);
+}
