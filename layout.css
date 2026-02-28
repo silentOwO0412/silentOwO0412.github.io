@@ -159,14 +159,13 @@ body.dark-mode nav {
 
 .modal-content {
   background: #141428;
-  margin: 12% auto;
+  margin: 10% auto;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 85%;
-  max-width: 500px;
+  max-width: 550px;
   border: 1px solid #00f2ff;
-  box-shadow: 0 0 25px #00f2ff;
-  position: relative;
+  box-shadow: 0 0 30px #00f2ff;
   animation: popup 0.4s ease;
 }
 
