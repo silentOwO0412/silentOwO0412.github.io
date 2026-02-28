@@ -4,6 +4,45 @@ body {
   background-color: #f4f4f9; /* Added a soft background color */
 }
 
+/* --- DARK MODE STYLES --- */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode nav {
+  background-color: #000000;
+}
+
+body.dark-mode .game-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05); /* Softer shadow for dark mode */
+}
+
+body.dark-mode .game-title {
+  color: #ffffff;
+}
+
+body.dark-mode .developer-name {
+  color: #bbbbbb; /* Lighter grey so it's readable on dark backgrounds */
+}
+
+/* Optional: Style the toggle button itself */
+#darkModeToggle {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#darkModeToggle:hover {
+  background-color: #666;
+}
+
 /* Navigation Bar */
 nav {
   background-color: #333;
