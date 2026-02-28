@@ -120,3 +120,50 @@ nav a:hover, nav a.active {
 .game-btn:hover {
   background-color: #0056b3;
 }
+
+/* --- 彈出視窗 (Modal) 樣式 --- */
+.modal {
+  display: none; /* 預設隱藏 */
+  position: fixed;
+  z-index: 1000; /* 確保它在畫面最上層 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+}
+
+.modal-content {
+  background-color: #f4f4f9;
+  margin: 15% auto; /* 距離頂部 15%，並且置中 */
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px; /* 視窗最大寬度 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close-btn {
+  color: #888;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* 支援深色模式的彈出視窗 */
+body.dark-mode .modal-content {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+body.dark-mode .close-btn:hover {
+  color: #fff;
+}
