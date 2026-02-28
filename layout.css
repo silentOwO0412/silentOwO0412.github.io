@@ -1,46 +1,73 @@
 body {
-  margin:0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Added a clean font */
+  background-color: #f4f4f9; /* Added a soft background color */
 }
 
-/*game type*/
+/* Navigation Bar */
+nav {
+  background-color: #333;
+  padding: 15px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+nav a:hover, nav a.active {
+  color: #007bff;
+}
+
+/* Game Type Container */
 .game-container {
   display: flex;
-  flex-wrap: wrap; /* Allows cards to wrap to the next line */
-  justify-content: center; /* Centers cards within the container */
-  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 20px; 
   padding: 20px;
 }
+
 .game-card {
-  width: 250px; /* Adjust width as needed */
+  width: 250px; 
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Ensures image corners are rounded with the card */
-  margin: 15px; /* Spacing between cards if in a grid */
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  overflow: hidden; 
+  margin: 15px; 
+  transition: transform 0.3s ease; 
 }
+
 .game-card:hover {
-  transform: translateY(-5px); /* Lift card on hover */
+  transform: translateY(-5px); 
 }
+
 .game-pic img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  height: 150px; /* Fixed height so all cards line up perfectly */
+  object-fit: cover; /* Prevents image distortion */
   display: block;
 }
+
 .game-info {
   padding: 15px;
   text-align: center;
 }
+
 .game-title {
   font-size: 1.2em;
   margin: 0 0 5px 0;
   color: #333;
 }
-.artist-name {
+
+/* Changed from artist-name to developer-name */
+.developer-name {
   font-size: 0.9em;
   color: #777;
   margin: 0 0 15px 0;
 }
+
 .game-btn {
   display: inline-block;
   padding: 8px 16px;
@@ -49,4 +76,8 @@ body {
   text-decoration: none;
   border-radius: 4px;
   font-size: 0.9em;
+}
+
+.game-btn:hover {
+  background-color: #0056b3;
 }
