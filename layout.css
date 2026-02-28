@@ -11,18 +11,41 @@ body {
 
 /* ===== Navigation Bar ===== */
 nav {
-  background: #0d0d18;
-  padding: 15px;
+  background: rgba(13, 13, 24, 0.95);
+  padding: 15px 30px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav a {
   color: #00f2ff;
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 25px;
   font-weight: bold;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 1.05em;
+  letter-spacing: 0.5px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #00f2ff, #007bff);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
 }
 
 nav a:hover,
@@ -38,88 +61,169 @@ body.dark-mode {
 }
 
 body.dark-mode nav {
-  background-color: #050505;
+  background-color: rgba(5, 5, 5, 0.95);
 }
 
 /* ===== hero section ===== */
 /* ===== HOME HERO ===== */
 .home-hero {
   text-align: center;
-  padding: 120px 20px;
-  background: radial-gradient(circle at center, #1a1a2e, #0f0f1a);
+  padding: 150px 20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 50%, #1a1a2e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 添加背景動畫效果 */
+.home-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 242, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(0, 123, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-hero h1,
+.home-hero p,
+.hero-btn {
+  position: relative;
+  z-index: 1;
 }
 
 .home-hero h1 {
-  font-size: 3em;
+  font-size: 3.5em;
+  margin-bottom: 15px;
   color: #00f2ff;
   text-shadow: 0 0 20px #00f2ff;
+  letter-spacing: 2px;
+  animation: glow-pulse 3s ease-in-out infinite;
 }
 
 .home-hero p {
   color: #bbbbbb;
-  margin: 20px 0;
+  font-size: 1.2em;
+  margin: 20px 0 40px 0;
+  letter-spacing: 0.5px;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 20px #00f2ff; }
+  50% { text-shadow: 0 0 30px #00f2ff, 0 0 40px #007bff; }
 }
 
 .hero-btn {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 15px 35px;
   background: linear-gradient(45deg, #00f2ff, #007bff);
   color: black;
   font-weight: bold;
-  border-radius: 6px;
+  font-size: 1.1em;
+  border-radius: 8px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3);
 }
 
 .hero-btn:hover {
-  box-shadow: 0 0 20px #00f2ff;
-  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 242, 255, 0.5);
+  transform: scale(1.08);
+}
+
+.hero-btn:active {
+  transform: scale(0.95);
 }
 
 /* ===== STATS SECTION ===== */
 .stats-section {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  gap: 60px;
-  padding: 60px 20px;
-  background: #141428;
+  gap: 80px;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #141428, #0f1523);
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 30px 40px;
+  background: rgba(20, 20, 40, 0.6);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.stat-box:hover {
+  background: rgba(20, 20, 40, 0.9);
+  border-color: rgba(0, 242, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  transform: translateY(-5px);
 }
 
 .stat-box h2 {
   color: #00f2ff;
-  font-size: 2em;
+  font-size: 2.5em;
+  margin: 10px 0;
+  letter-spacing: 1px;
 }
 
 .stat-box p {
   color: #aaaaaa;
+  font-size: 1.1em;
+  margin: 0;
 }
 
 /* ===== PREVIEW SECTION ===== */
 .preview-section {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(15, 15, 26, 0.5), rgba(26, 26, 46, 0.5));
 }
 
 .preview-section h2 {
   color: #00f2ff;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+  font-size: 2.5em;
+  letter-spacing: 1px;
 }
 
 .preview-cards {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.preview-card {
+  position: relative;
+  perspective: 1000px;
 }
 
 .preview-card img {
-  width: 250px;
-  border-radius: 10px;
-  transition: 0.3s;
+  width: 280px;
+  height: 180px;
+  border-radius: 15px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 242, 255, 0.2);
+  object-fit: cover;
+  display: block;
 }
 
 .preview-card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #00f2ff;
+  transform: scale(1.08) translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 242, 255, 0.4);
+  border-color: rgba(0, 242, 255, 0.6);
 }
 
 /* ===== Game Cards ===== */
@@ -259,6 +363,32 @@ body.dark-mode nav {
   text-shadow: 0 0 10px #00f2ff;
 }
 
+/* ===== Page Load Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-hero,
+.stats-section,
+.preview-section {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.stats-section {
+  animation-delay: 0.2s;
+}
+
+.preview-section {
+  animation-delay: 0.4s;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .game-container {
@@ -268,6 +398,35 @@ body.dark-mode nav {
   .game-card {
     width: 90%;
   }
+
+  .stats-section {
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px 20px;
+  }
+
+  .stat-box {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .preview-cards {
+    gap: 30px;
+  }
+
+  .preview-card img {
+    width: 90vw;
+    max-width: 300px;
+  }
+
+  .home-hero h1 {
+    font-size: 2.5em;
+  }
+
+  nav a {
+    margin: 0 15px;
+    font-size: 0.95em;
+  }
 }
 
 /* ===== Game Tags ===== */
@@ -275,7 +434,7 @@ body.dark-mode nav {
   margin-bottom: 15px;
 }
 
-.tag {
+tag {
   display: inline-block;
   padding: 4px 10px;
   margin: 3px;
