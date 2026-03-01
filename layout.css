@@ -512,3 +512,42 @@ body.dark-mode nav {
   box-shadow: 0 0 10px currentColor;
   transform: scale(1.1);
 }
+
+/* ===== 攻略頁面專屬背景圖 (含深色透明遮罩) ===== */
+.minecraft-bg {
+  background-image: linear-gradient(rgba(15, 15, 30, 0.85), rgba(10, 10, 25, 0.95)), url('minecraft.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.lol-bg {
+  background-image: linear-gradient(rgba(15, 15, 30, 0.85), rgba(10, 10, 25, 0.95)), url('league of legends.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.repo-bg {
+  background-image: linear-gradient(rgba(15, 15, 30, 0.85), rgba(10, 10, 25, 0.95)), url('REPO.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 確保文字在圖片背景上依然清晰發光 */
+.guide-card.minecraft-bg, 
+.guide-card.lol-bg, 
+.guide-card.repo-bg {
+  /* 覆蓋原本的底色，讓背景圖顯示出來 */
+  background-color: transparent; 
+  border: 1px solid rgba(0, 242, 255, 0.4);
+}
+
+.guide-card:hover.minecraft-bg, 
+.guide-card:hover.lol-bg, 
+.guide-card:hover.repo-bg {
+  border-color: #00f2ff;
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+  transform: translateY(-5px);
+}
