@@ -539,15 +539,6 @@ body.dark-mode nav {
 .guide-card.minecraft-bg, 
 .guide-card.lol-bg, 
 .guide-card.repo-bg {
-  /* 覆蓋原本的底色，讓背景圖顯示出來 */
   background-color: transparent; 
   border: 1px solid rgba(0, 242, 255, 0.4);
-}
-
-.guide-card:hover.minecraft-bg, 
-.guide-card:hover.lol-bg, 
-.guide-card:hover.repo-bg {
-  border-color: #00f2ff;
-  box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
-  transform: translateY(-5px);
 }
