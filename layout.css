@@ -513,6 +513,96 @@ body.dark-mode nav {
   transform: scale(1.1);
 }
 
+/* ===============================
+   🎮 GUIDE PAGE STYLES (攻略頁面方格與排版)
+=================================*/
+.guide-header {
+  text-align: center;
+  padding: 60px 20px 20px 20px;
+}
+
+.guide-header h1 {
+  color: #00f2ff;
+  font-size: 2.8em;
+  text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
+  margin-bottom: 10px;
+}
+
+.guide-header p {
+  color: #aaaaaa;
+  font-size: 1.2em;
+}
+
+.guide-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 這是畫出方格的最關鍵程式碼！ */
+.guide-card {
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  border-radius: 12px;
+  padding: 30px; /* 讓文字和邊框有距離 */
+  margin-bottom: 40px; /* 每個方格之間的距離 */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+.guide-title {
+  color: #00f2ff;
+  font-size: 2em;
+  border-bottom: 2px solid rgba(0, 242, 255, 0.2);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.guide-text h3 {
+  color: #ff00cc;
+  font-size: 1.4em;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(255, 0, 204, 0.4);
+}
+
+.guide-text p {
+  line-height: 1.6;
+  font-size: 1.1em;
+  color: #e0e0e0;
+}
+
+/* ===== 操作按鍵表格 (讓按鍵表也變成漂亮的 Cyberpunk 風格) ===== */
+.keybinds {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.keybinds th, .keybinds td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.keybinds th {
+  background: rgba(0, 242, 255, 0.2);
+  color: #00f2ff;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.keybinds tr:last-child td {
+  border-bottom: none;
+}
+
+.keybinds tr:hover td {
+  background: rgba(255, 0, 204, 0.15);
+  color: #ffffff;
+}
 /* ===== 攻略頁面專屬背景圖 (含深色透明遮罩) ===== */
 .minecraft-bg {
   background-image: linear-gradient(rgba(15, 15, 30, 0.85), rgba(10, 10, 25, 0.95)), url('minecraft.jpg');
