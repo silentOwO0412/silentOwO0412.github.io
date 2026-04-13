@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Bamboo Fiber Coffee Cup",
+    "price": 15.00,
+    "image": "https://via.placeholder.com/150",
+    "eco_impact": "BPA Free, Biodegradable",
+    "origin": "Ethically Sourced (Vietnam)"
+  },
+  {
+    "id": 2,
+    "name": "Organic Cotton Tote",
+    "price": 12.50,
+    "image": "https://via.placeholder.com/150",
+    "eco_impact": "100% Organic, Zero Waste",
+    "origin": "Fair Trade (India)"
+  },
+  {
+    "id": 3,
+    "name": "Solar Powered Charger",
+    "price": 45.00,
+    "image": "https://via.placeholder.com/150",
+    "eco_impact": "Renewable Energy",
+    "origin": "ISO Certified Factory (China)"
+  }
+]
